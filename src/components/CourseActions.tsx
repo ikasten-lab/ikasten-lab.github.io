@@ -23,8 +23,31 @@ export function CourseActions({ slug, soon, hasPreview }: { slug: string; soon: 
 
   const owned = ready && student.purchased.includes(slug);
   const done = student.completed[slug] ?? [];
-  const next = course.lessons.find((l) => !done.includes(l.slug)) ?? course.lessons[0];
+  const next = course.lessons.find((l) => !done.includes(l.slug));
   const first = course.lessons[0];
+  const cert = student.certificates.find((c) => c.courseSlug === slug);
+
+  if (owned && !next) {
+    return (
+      <div className="space-y-3">
+        <p className="font-semibold">Terminaste las {course.lessons.length} lecciones.</p>
+        {cert ? (
+          <ButtonLink href={`/verificar/?codigo=${cert.code}`} className="w-full">
+            Ver mi certificado
+          </ButtonLink>
+        ) : (
+          <ButtonLink href={`/aprender/${slug}/quiz/`} className="w-full">
+            Hacer el quiz final
+          </ButtonLink>
+        )}
+        {first && (
+          <ButtonLink href={`/aprender/${slug}/${first.slug}/`} variant="secondary" className="w-full">
+            Repasar desde el principio
+          </ButtonLink>
+        )}
+      </div>
+    );
+  }
 
   if (owned && next) {
     return (

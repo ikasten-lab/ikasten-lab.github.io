@@ -14,7 +14,7 @@ const variants: Record<Variant, string> = {
 };
 
 const base =
-  "inline-flex min-h-11 items-center justify-center gap-2 rounded px-5 text-[15px] font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50";
+  "inline-flex min-h-11 items-center justify-center gap-2 rounded px-5 text-[15px] font-semibold disabled:cursor-not-allowed disabled:opacity-50";
 
 function classes(variant: Variant): string {
   return variant === "quiet" ? variants.quiet : `${base} ${variants[variant]}`;
