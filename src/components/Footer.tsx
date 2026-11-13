@@ -13,6 +13,9 @@ export function Footer() {
           <Link href="/empresas/" className="hover:text-accent">
             Para empresas
           </Link>
+          <Link href="/terminos/" className="hover:text-accent">
+            Términos y privacidad
+          </Link>
         </nav>
       </Container>
       <p className="border-t border-border px-4 py-3 text-center text-[13px] text-muted">

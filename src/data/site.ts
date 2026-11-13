@@ -3,13 +3,12 @@ export const site = {
   name: "Ikasten",
   charla: {
     title: "Charla abierta: IA aplicada a RR.HH.",
-    // Fecha confirmada. Hora a confirmar después de hablar con El Pazo.
     dateLabel: "Sábado 28 de noviembre",
-    timeLabel: "Hora a confirmar",
-    place: "El Pazo, Salta",
+    timeLabel: "De 9.30 a 11.00",
+    place: "El Pazo Café, Balcarce 735, Salta",
     free: true,
   },
-  // Formulario externo (Tally o Google Forms) hasta que haya back. Vacío = todavía no publicado.
-  registrationFormUrl: "",
+  // Formulario externo (Tally) hasta que haya back. Vacío = todavía no publicado.
+  registrationFormUrl: "https://tally.so/r/Ge9bqe",
   companiesContactUrl: "",
 } as const;
