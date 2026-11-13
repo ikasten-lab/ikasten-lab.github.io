@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tokens de Ikasten. Base: people-app/DESIGN.md (canvas cálido + Salta Burgundy).
+   Único lugar del proyecto donde se escriben hex. */
+:root {
+  --canvas: #f4f1ea;
+  --surface: #ede9e0;
+  --card: #ffffff;
+  --border: #ddd8cd;
+  --border-strong: #c4bdae;
+  --text: #1a1816;
+  --text-muted: #6b665f;
+  --text-faint: #8f897f;
+  --accent: #5a0f22;
+  --accent-hover: #74152e;
+  --accent-soft: #9a2847;
+  --accent-wash: #f2e7e9;
+  --positive: #4e6b52;
+  --positive-wash: #e8ede7;
+  --attention: #8a6a4f;
+  --attention-wash: #f1eae1;
+}
+
+html {
+  background: var(--canvas);
+  color: var(--text);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+p,
+li {
+  text-wrap: pretty;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--accent-wash);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
